@@ -38,7 +38,12 @@ const loadNotes = () =>{
     }
 }
 
+const removeNotes = (title) =>{
+    console.log(title);
+}
+
 module.exports = {
-    getNotes: getNotes,
-    addNote: addNote
+    getNotes    : getNotes,
+    addNote     : addNote,
+    removeNotes : removeNotes
 }
