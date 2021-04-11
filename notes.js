@@ -39,7 +39,11 @@ const loadNotes = () =>{
 }
 
 const removeNotes = (title) =>{
-    console.log(title);
+    const listNotes = loadNotes()
+    const allNotes = listNotes.filter((note) =>{
+        return note.title !== title
+    })
+    saveNotes(allNotes);
 }
 
 module.exports = {
