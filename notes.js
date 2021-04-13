@@ -42,14 +42,14 @@ const loadNotes = () => {
 }
 
 const removeNotes = (title) => {
-    const listNotes = loadNotes()
-    const allNotes = listNotes.filter((note) => note.title !== title);
+    const listNote = loadNotes()
+    const allNotes = listNote.filter((note) => note.title !== title);
 
     // const allNotes = listNotes.filter((note) =>{
     //     return note.title !== title
     // })
 
-    if(listNotes.length > allNotes.length) {
+    if(listNote.length > allNotes.length) {
         console.log(chalk.green.inverse('Note removed!'))
         saveNotes(allNotes);
     } else {
@@ -58,8 +58,17 @@ const removeNotes = (title) => {
 
 }
 
+const listNotes = () => {
+    const notes = loadNotes();
+    console.log(chalk.inverse('All Notes!'))
+    notes.forEach((note) =>{
+        console.log(note.title);
+    })
+}
+
 module.exports = {
     getNotes    : getNotes,
     addNote     : addNote,
-    removeNotes : removeNotes
+    removeNotes : removeNotes,
+    listNotes   : listNotes
 }
