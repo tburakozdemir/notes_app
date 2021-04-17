@@ -3,12 +3,7 @@ const chalk = require('chalk');
 
 const addNote = (title, body) => {
     const notes = loadNotes();
-    //const duplicateNotes = notes.filter((note) => note.title === title);
     const duplicateNote = notes.find((note) => note.title === title);
-
-    // const duplicateNotes = notes.filter((note) => {
-    //     return note.title === title
-    // })
 
     if(duplicateNote === undefined) {
         notes.push({
@@ -40,10 +35,6 @@ const loadNotes = () => {
 const removeNotes = (title) => {
     const listNote = loadNotes()
     const allNotes = listNote.filter((note) => note.title !== title);
-
-    // const allNotes = listNotes.filter((note) =>{
-    //     return note.title !== title
-    // })
 
     if(listNote.length > allNotes.length) {
         console.log(chalk.green.inverse('Note removed!'))
